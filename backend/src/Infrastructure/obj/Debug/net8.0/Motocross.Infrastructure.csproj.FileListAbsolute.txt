@@ -1,0 +1,17 @@
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocross.Infrastructure.csproj.AssemblyReference.cache
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocross.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocross.Infrastructure.AssemblyInfoInputs.cache
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocross.Infrastructure.AssemblyInfo.cs
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocross.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/bin/Debug/net8.0/Motocross.Infrastructure.deps.json
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/bin/Debug/net8.0/Motocross.Infrastructure.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/bin/Debug/net8.0/Motocross.Infrastructure.pdb
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/bin/Debug/net8.0/Motocross.Application.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/bin/Debug/net8.0/Motocross.Domain.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/bin/Debug/net8.0/Motocross.Application.pdb
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/bin/Debug/net8.0/Motocross.Domain.pdb
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocros.62547B0A.Up2Date
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocross.Infrastructure.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/refint/Motocross.Infrastructure.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/Motocross.Infrastructure.pdb
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Infrastructure/obj/Debug/net8.0/ref/Motocross.Infrastructure.dll

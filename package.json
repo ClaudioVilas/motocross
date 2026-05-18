@@ -1,0 +1,33 @@
+{
+  "name": "motocross-tracking-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Motorsports tracking platform monorepo",
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "frontend": "npm run dev --workspace=frontend",
+    "frontend:build": "npm run build --workspace=frontend",
+    "frontend:preview": "npm run preview --workspace=frontend",
+    "install:all": "npm install && cd backend && dotnet restore",
+    "clean": "npm run clean --workspaces && cd backend && dotnet clean"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/motocross-tracking.git"
+  },
+  "keywords": [
+    "motocross",
+    "tracking",
+    "gps",
+    "real-time",
+    "motorsports"
+  ],
+  "author": "",
+  "license": "MIT"
+}

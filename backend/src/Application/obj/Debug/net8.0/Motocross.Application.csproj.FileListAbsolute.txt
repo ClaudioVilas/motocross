@@ -1,0 +1,15 @@
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/bin/Debug/net8.0/Motocross.Application.deps.json
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/bin/Debug/net8.0/Motocross.Application.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/bin/Debug/net8.0/Motocross.Application.pdb
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/bin/Debug/net8.0/Motocross.Domain.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/bin/Debug/net8.0/Motocross.Domain.pdb
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocross.Application.csproj.AssemblyReference.cache
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocross.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocross.Application.AssemblyInfoInputs.cache
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocross.Application.AssemblyInfo.cs
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocross.Application.csproj.CoreCompileInputs.cache
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocros.0404A98E.Up2Date
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocross.Application.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/refint/Motocross.Application.dll
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/Motocross.Application.pdb
+/Users/claudiovilas/Downloads/Proyectos/Motocross/backend/src/Application/obj/Debug/net8.0/ref/Motocross.Application.dll
