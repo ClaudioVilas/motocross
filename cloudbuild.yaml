@@ -1,0 +1,63 @@
+# Cloud Build configuration for automatic deployment
+steps:
+  # Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/motocross-api:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/motocross-api:latest'
+      - '-f'
+      - 'backend/Dockerfile'
+      - './backend'
+
+  # Push the Docker image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/motocross-api:$COMMIT_SHA'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/motocross-api:latest'
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'motocross-api'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/motocross-api:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'ASPNETCORE_ENVIRONMENT=Production,Frontend__Url=https://motocross-10576.web.app'
+      - '--set-cloudsql-instances'
+      - '$PROJECT_ID:us-central1:motocross-db'
+      - '--add-cloudsql-instances'
+      - '$PROJECT_ID:us-central1:motocross-db'
+      - '--max-instances'
+      - '10'
+      - '--min-instances'
+      - '0'
+      - '--memory'
+      - '512Mi'
+      - '--cpu'
+      - '1'
+      - '--timeout'
+      - '300'
+
+images:
+  - 'gcr.io/$PROJECT_ID/motocross-api:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/motocross-api:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'N1_HIGHCPU_8'
