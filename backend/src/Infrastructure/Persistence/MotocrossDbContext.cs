@@ -12,6 +12,7 @@ public class MotocrossDbContext : DbContext
     {
     }
 
+    public DbSet<UserAccount> Users => Set<UserAccount>();
     public DbSet<Session> Sessions => Set<Session>();
     public DbSet<TrackingPoint> TrackingPoints => Set<TrackingPoint>();
     public DbSet<Lap> Laps => Set<Lap>();
@@ -19,6 +20,35 @@ public class MotocrossDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        // User configuration
+        modelBuilder.Entity<UserAccount>(entity =>
+        {
+            entity.ToTable("Users");
+            entity.HasKey(u => u.Id);
+
+            entity.Property(u => u.Email)
+                .IsRequired()
+                .HasMaxLength(320);
+
+            entity.HasIndex(u => u.Email)
+                .IsUnique();
+
+            entity.Property(u => u.PasswordHash)
+                .IsRequired();
+
+            entity.Property(u => u.DisplayName)
+                .IsRequired()
+                .HasMaxLength(200);
+
+            entity.Property(u => u.CreatedAt)
+                .IsRequired();
+
+            entity.HasMany(u => u.Sessions)
+                .WithOne(s => s.User)
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.SetNull);
+        });
 
         // Session configuration
         modelBuilder.Entity<Session>(entity =>
@@ -36,6 +66,9 @@ public class MotocrossDbContext : DbContext
             entity.Property(e => e.Status)
                 .HasConversion<string>()
                 .HasMaxLength(50);
+
+            entity.Property(e => e.UserId)
+                .IsRequired(false);
 
             // Value object - Coordinate
             entity.OwnsOne(e => e.StartFinishLine, coord =>
@@ -61,6 +94,7 @@ public class MotocrossDbContext : DbContext
             // Indexes
             entity.HasIndex(e => e.Status);
             entity.HasIndex(e => e.StartTime);
+            entity.HasIndex(e => e.UserId);
         });
 
         // TrackingPoint configuration

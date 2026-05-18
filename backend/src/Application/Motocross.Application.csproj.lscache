@@ -54,17 +54,23 @@ TemporaryDependencyNodeTargetIdentifier=net8.0
 
 [sourceFiles]
 Commands/SessionCommands.cs
-DTOs/SessionDtos.cs
+DTOs/
+ SessionDtos.cs
+ UserDtos.cs
 Interfaces/
  IRealtimePublisher.cs
  ISessionRepository.cs
  ISessionService.cs
+ IUserRepository.cs
+ IUserService.cs
 obj/Debug/net8.0/
  .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
  Motocross.Application.AssemblyInfo.cs
  Motocross.Application.GlobalUsings.g.cs
 Queries/SessionQueries.cs
-Services/SessionService.cs
+Services/
+ SessionService.cs
+ UserService.cs
 
 [metadataReferences]
 ../Domain/obj/Debug/net8.0/ref/Motocross.Domain.dll
@@ -235,13 +241,43 @@ Services/SessionService.cs
  fluentvalidation/12.1.1/lib/net8.0/FluentValidation.dll
  mediatr.contracts/2.0.1/lib/netstandard2.0/MediatR.Contracts.dll
  mediatr/14.1.0/lib/net8.0/MediatR.dll
+ microsoft.aspnetcore.authentication.abstractions/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Abstractions.dll
+ microsoft.aspnetcore.authentication.cookies/2.3.9/lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Cookies.dll
+ microsoft.aspnetcore.authentication.core/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.dll
+ microsoft.aspnetcore.authentication/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Authentication.dll
+ microsoft.aspnetcore.cryptography.internal/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+ microsoft.aspnetcore.cryptography.keyderivation/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+ microsoft.aspnetcore.dataprotection.abstractions/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.DataProtection.Abstractions.dll
+ microsoft.aspnetcore.dataprotection/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.DataProtection.dll
+ microsoft.aspnetcore.hosting.abstractions/2.3.9/lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Abstractions.dll
+ microsoft.aspnetcore.hosting.server.abstractions/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+ microsoft.aspnetcore.http.abstractions/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll
+ microsoft.aspnetcore.http.extensions/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Http.Extensions.dll
+ microsoft.aspnetcore.http.features/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll
+ microsoft.aspnetcore.http/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.Http.dll
+ microsoft.aspnetcore.identity/2.3.10/lib/netstandard2.0/Microsoft.AspNetCore.Identity.dll
+ microsoft.aspnetcore.webutilities/2.3.0/lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll
+ microsoft.extensions.configuration.abstractions/8.0.0/lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
  microsoft.extensions.dependencyinjection.abstractions/10.0.8/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+ microsoft.extensions.dependencyinjection/8.0.1/lib/net8.0/Microsoft.Extensions.DependencyInjection.dll
+ microsoft.extensions.diagnostics.abstractions/8.0.1/lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+ microsoft.extensions.fileproviders.abstractions/8.0.0/lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+ microsoft.extensions.hosting.abstractions/8.0.1/lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+ microsoft.extensions.identity.core/2.3.9/lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll
  microsoft.extensions.logging.abstractions/10.0.0/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+ microsoft.extensions.logging/8.0.1/lib/net8.0/Microsoft.Extensions.Logging.dll
+ microsoft.extensions.objectpool/8.0.11/lib/net8.0/Microsoft.Extensions.ObjectPool.dll
+ microsoft.extensions.options/8.0.2/lib/net8.0/Microsoft.Extensions.Options.dll
+ microsoft.extensions.primitives/8.0.0/lib/net8.0/Microsoft.Extensions.Primitives.dll
+ microsoft.extensions.webencoders/8.0.11/lib/net8.0/Microsoft.Extensions.WebEncoders.dll
  microsoft.identitymodel.abstractions/8.14.0/lib/net8.0/Microsoft.IdentityModel.Abstractions.dll
  microsoft.identitymodel.jsonwebtokens/8.14.0/lib/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
  microsoft.identitymodel.logging/8.14.0/lib/net8.0/Microsoft.IdentityModel.Logging.dll
  microsoft.identitymodel.tokens/8.14.0/lib/net8.0/Microsoft.IdentityModel.Tokens.dll
+ microsoft.net.http.headers/2.3.0/lib/netstandard2.0/Microsoft.Net.Http.Headers.dll
  system.diagnostics.diagnosticsource/10.0.0/lib/net8.0/System.Diagnostics.DiagnosticSource.dll
+ system.security.cryptography.pkcs/8.0.1/lib/net8.0/System.Security.Cryptography.Pkcs.dll
+ system.security.cryptography.xml/8.0.2/lib/net8.0/System.Security.Cryptography.Xml.dll
 
 [analyzerReferences]
 <DOTNET>/packs/Microsoft.NETCore.App.Ref/8.0.12/analyzers/dotnet/cs/
@@ -254,7 +290,9 @@ Services/SessionService.cs
 <DOTNET>/sdk/8.0.405/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
-<NUGET>/microsoft.extensions.logging.abstractions/10.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+<NUGET>/
+ microsoft.extensions.logging.abstractions/10.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+ microsoft.extensions.options/8.0.2/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
 
 [analyzerConfigFiles]
 <DOTNET>/sdk/8.0.405/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_8_default.globalconfig

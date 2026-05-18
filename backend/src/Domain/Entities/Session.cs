@@ -16,6 +16,8 @@ public class Session
     public SessionStatus Status { get; private set; }
     public Coordinate? StartFinishLine { get; private set; }
     public double StartFinishLineRadius { get; private set; } = 20; // meters
+    public Guid? UserId { get; private set; }
+    public UserAccount? User { get; private set; }
 
     private readonly List<TrackingPoint> _trackingPoints = new();
     public IReadOnlyCollection<TrackingPoint> TrackingPoints => _trackingPoints.AsReadOnly();
@@ -31,7 +33,7 @@ public class Session
 
     private Session() { } // EF Core
 
-    public Session(string name, string? description = null)
+    public Session(string name, string? description = null, Guid? userId = null)
     {
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("Session name is required", nameof(name));
@@ -41,6 +43,7 @@ public class Session
         Description = description;
         StartTime = DateTime.UtcNow;
         Status = SessionStatus.Created;
+        UserId = userId;
     }
 
     public void Start()
@@ -128,5 +131,10 @@ public class Session
         }
 
         return totalDistance;
+    }
+
+    public void AssignUser(Guid userId)
+    {
+        UserId = userId;
     }
 }

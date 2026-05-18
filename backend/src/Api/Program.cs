@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Motocross.Application.Interfaces;
 using Motocross.Application.Services;
+using Motocross.Domain.Entities;
 using Motocross.Infrastructure;
 using Motocross.Infrastructure.Realtime;
 
@@ -23,6 +26,11 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 // Add Application Services
 builder.Services.AddScoped<ISessionService, SessionService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddSingleton<IPasswordHasher<UserAccount>, PasswordHasher<UserAccount>>();
+
+// Add authorization so future auth policies can be enabled
+builder.Services.AddAuthorization();
 
 // CORS Configuration
 builder.Services.AddCors(options =>
@@ -43,6 +51,13 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Apply database migrations automatically on startup
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<Motocross.Infrastructure.Persistence.MotocrossDbContext>();
+    db.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())

@@ -61,6 +61,7 @@ Entities/
  Lap.cs
  Session.cs
  TrackingPoint.cs
+ UserAccount.cs
 Enums/
  SessionStatus.cs
  TrackingPointType.cs

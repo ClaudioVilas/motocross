@@ -2,7 +2,8 @@ namespace Motocross.Application.Commands;
 
 public record CreateSessionCommand(
     string Name,
-    string? Description = null);
+    string? Description = null,
+    Guid? UserId = null);
 
 public record StartSessionCommand(
     Guid SessionId);

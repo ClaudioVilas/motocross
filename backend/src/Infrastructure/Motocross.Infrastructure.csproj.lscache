@@ -60,7 +60,9 @@ obj/Debug/net8.0/
  Motocross.Infrastructure.GlobalUsings.g.cs
 Persistence/
  MotocrossDbContext.cs
- Repositories/SessionRepository.cs
+ Repositories/
+  SessionRepository.cs
+  UserRepository.cs
 Realtime/TrackingHub.cs
 
 [metadataReferences]
@@ -396,6 +398,7 @@ Realtime/TrackingHub.cs
  system.formats.asn1/8.0.2/lib/net8.0/System.Formats.Asn1.dll
  system.identitymodel.tokens.jwt/6.35.0/lib/net6.0/System.IdentityModel.Tokens.Jwt.dll
  system.memory.data/1.0.2/lib/netstandard2.0/System.Memory.Data.dll
+ system.security.cryptography.pkcs/8.0.1/lib/net8.0/System.Security.Cryptography.Pkcs.dll
  system.security.cryptography.protecteddata/6.0.0/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 
 [analyzerReferences]

@@ -23,6 +23,7 @@ public static class DependencyInjection
 
         // Repositories
         services.AddScoped<ISessionRepository, SessionRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
 
         // Domain Services
         services.AddScoped<ILapDetectionService, LapDetectionService>();

@@ -13,6 +13,7 @@ Desktop.ini
 *.swp
 *.swo
 *~
+*.lscache
 
 # Environment Variables
 .env
@@ -50,12 +51,20 @@ frontend/coverage/
 backend/bin/
 backend/obj/
 backend/out/
+backend/src/**/bin/
+backend/src/**/obj/
 backend/*.user
 backend/*.suo
 backend/.vs/
 backend/packages/
 backend/TestResults/
 backend/*.DotSettings.user
+backend/**/*.sourcelink.json
+backend/src/Domain/obj/
+backend/src/Application/obj/
+backend/src/Infrastructure/obj/
+backend/src/Api/obj/
+backend/src/Api/bin/
 
 # Database
 *.db
