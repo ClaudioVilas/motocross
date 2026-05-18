@@ -1,0 +1,28 @@
+# Render configuration for Motocross Tracking Platform
+# Place this file in the root of your repository
+
+services:
+  # Backend API (.NET 8)
+  - type: web
+    name: motocross-api
+    runtime: dotnet
+    plan: free
+    rootDir: backend
+    buildCommand: dotnet restore && dotnet build --configuration Release
+    startCommand: cd src/Api && dotnet run --no-build --configuration Release --urls http://0.0.0.0:$PORT
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: motocross-db
+          property: connectionString
+      - key: Frontend__Url
+        value: http://localhost:5173
+
+databases:
+  # PostgreSQL Database
+  - name: motocross-db
+    databaseName: motocross
+    user: motocross_user
+    plan: free
