@@ -32,13 +32,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 # Docker
-.dockerignore
-*.dockerfile
 docker-compose.override.yml
 
 # Firebase
 .firebase/
-.firebaserc
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
