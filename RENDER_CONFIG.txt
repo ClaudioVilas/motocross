@@ -1,0 +1,135 @@
+# 🚀 CONFIGURACIÓN AUTOMÁTICA PARA RENDER
+# Copia y pega estos valores en Render Dashboard
+
+## 📊 PASO 1: PostgreSQL Database
+
+Ir a: https://dashboard.render.com/
+Clic en "New +" → "PostgreSQL"
+
+Configuración:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Name:           motocross-db
+Database:       motocross
+User:           motocross_user
+Region:         Oregon (US West)
+PostgreSQL:     15
+Plan:           Free
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Clic en "Create Database"
+⏰ Esperar 2-3 minutos hasta que esté "Available"
+📋 COPIAR "Internal Database URL" de la pestaña Info
+
+
+## 🌐 PASO 2: Web Service (Backend API)
+
+Clic en "New +" → "Web Service"
+Seleccionar: "Build and deploy from a Git repository"
+Conectar GitHub → Seleccionar repositorio: ClaudioVilas/motocross
+
+Configuración:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Name:           motocross-api
+Region:         Oregon (US West)
+Branch:         main
+Root Directory: (dejar vacío)
+Runtime:        .NET
+
+Build Command (copiar exactamente):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+cd backend && dotnet restore && dotnet build --configuration Release
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Start Command (copiar exactamente):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+cd backend/src/Api && dotnet run --no-build --configuration Release --urls http://0.0.0.0:$PORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Plan:           Free
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+## 🔧 PASO 3: Variables de Entorno
+
+Scrollear hasta "Environment Variables" (antes de hacer clic en Create):
+
+Variable 1:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Key:    ConnectionStrings__DefaultConnection
+Value:  [PEGAR AQUÍ EL "Internal Database URL" DEL PASO 1]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Variable 2:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Key:    ASPNETCORE_ENVIRONMENT
+Value:  Production
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Variable 3:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Key:    Frontend__Url
+Value:  http://localhost:5173
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(Este se actualizará después con la URL del frontend)
+
+✅ Clic en "Create Web Service"
+⏰ Esperar 5-10 minutos para el primer deploy
+
+
+## 🎯 PASO 4: Verificar Deployment
+
+Una vez que el servicio esté "Live":
+
+1. Copiar la URL del servicio (ej: https://motocross-api.onrender.com)
+
+2. Probar en el navegador:
+   https://tu-url.onrender.com/health
+
+3. Debe responder:
+   {"status":"healthy","timestamp":"..."}
+
+
+## 📋 URLs a Guardar
+
+┌─────────────────────────────────────────────────────┐
+│ Backend API:                                        │
+│ https://motocross-api.onrender.com                  │
+│                                                     │
+│ Health Check:                                       │
+│ https://motocross-api.onrender.com/health           │
+│                                                     │
+│ Database:                                           │
+│ postgresql://motocross_user:xxx@dpg-xxx/motocross   │
+└─────────────────────────────────────────────────────┘
+
+
+## 🔍 Monitoreo
+
+Ver logs en tiempo real:
+→ Dashboard → motocross-api → Logs tab
+
+Buscar en logs:
+✅ "Application started"
+✅ "Now listening on: http://0.0.0.0:xxxxx"
+✅ "Applying database migrations"
+
+
+## ⚠️ IMPORTANTE
+
+🔴 Usa dos guiones bajos __ en: ConnectionStrings__DefaultConnection
+🔴 No agregues / al final de las URLs
+🔴 Usa "Internal Database URL", NO "External"
+🔴 Backend y Database en la misma región (Oregon)
+
+
+## 🎉 Próximo Paso
+
+Una vez que el backend esté funcionando:
+→ Desplegar frontend en Vercel o GitHub Pages
+→ Actualizar Frontend__Url con la URL del frontend
+→ ¡Listo!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 TIP: Guarda este archivo para referencia futura
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
