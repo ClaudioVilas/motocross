@@ -80,7 +80,7 @@ git push -u origin main
 **If you don't have SSH keys set up:**
 ```bash
 # Generate SSH key
-ssh-keygen -t ed25519 -C "your-email@example.com"
+ssh-keygen -t ed25519 -C "claudiogvilas@gmail.com"
 # Press Enter for default location
 # Add to GitHub: https://github.com/settings/keys
 cat ~/.ssh/id_ed25519.pub  # Copy this and add to GitHub
@@ -105,7 +105,7 @@ cat ~/.ssh/id_ed25519.pub  # Copy this and add to GitHub
    - Key: `Frontend__Url`
    - Value: (leave empty for now, will add after frontend deployment)
 7. Click "Create Web Service"
-8. **Save the backend URL** (e.g., `https://motocross-api.onrender.com`)
+8. **Save the backend URL** (e.g., `https://motocross-8m01.onrender.com`)
 
 ### 3. Deploy Frontend to Vercel (3 minutes)
 

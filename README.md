@@ -150,7 +150,7 @@ VITE_MAPBOX_TOKEN=your_mapbox_token
 ### Backend (Render)
 - Automatic deployment on push to `main`
 - PostgreSQL database managed by Render
-- Production URL: https://motocross-api.onrender.com
+- Production URL: https://motocross-8m01.onrender.com
 
 ## 📡 Key Features
 
@@ -256,7 +256,13 @@ VITE_MAPBOX_TOKEN=your_mapbox_token
 ## � Repository
 
 **GitHub:** https://github.com/ClaudioVilas/motocross
+## 🌐 Live Deployment
 
+**Backend API:** https://motocross-8m01.onrender.com  
+**Health Check:** https://motocross-8m01.onrender.com/health  
+**Status:** ✅ Live and operational
+
+> 📖 See [BACKEND_DEPLOYED.md](BACKEND_DEPLOYED.md) for API endpoints and configuration
 ## �📚 Documentation
 
 - [Architecture Guide](docs/ARCHITECTURE.md)
