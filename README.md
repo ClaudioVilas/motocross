@@ -142,6 +142,11 @@ VITE_MAPBOX_TOKEN=your_mapbox_token
 - Environment variables configured via Vercel dashboard
 - Production URL: https://motocross-tracking.vercel.app
 
+### Frontend (GitHub Pages)
+- Automatic deployment on push to `main`
+- Uses GitHub Actions to publish `frontend/dist`
+- Pages URL: https://ClaudioVilas.github.io/motocross/
+
 ### Backend (Render)
 - Automatic deployment on push to `main`
 - PostgreSQL database managed by Render
