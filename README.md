@@ -2,6 +2,23 @@
 
 A production-ready motorsports tracking platform for real-time position monitoring, lap timing, and telemetry visualization.
 
+## 🚀 Quick Start
+
+### ⚠️ FIRST: Push to GitHub
+
+**Your code is ready but not pushed yet!**
+
+📖 **Follow the guide:** [PUSH_TO_GITHUB.md](PUSH_TO_GITHUB.md)
+
+Quick steps:
+1. Create a Personal Access Token at: https://github.com/settings/tokens/new
+2. Run: `git push -u origin main`
+3. Use your token as the password
+
+### 🌐 Repository
+
+**GitHub:** https://github.com/ClaudioVilas/motocross
+
 ## 🎯 Overview
 
 This platform provides real-time tracking for motorsports events (motocross, karting) with support for multiple tracking providers including mobile GPS, BLE tags, and external GPS devices.
