@@ -231,7 +231,11 @@ VITE_MAPBOX_TOKEN=your_mapbox_token
 - Race management tools
 - Analytics dashboard
 
-## 📚 Documentation
+## � Repository
+
+**GitHub:** https://github.com/ClaudioVilas/motocross
+
+## �📚 Documentation
 
 - [Architecture Guide](docs/ARCHITECTURE.md)
 - [API Documentation](docs/API.md)

@@ -18,8 +18,8 @@ Thank you for your interest in contributing to the Motocross Tracking Platform! 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/motocross-tracking.git
-   cd motocross-tracking
+   git clone https://github.com/ClaudioVilas/motocross.git
+   cd motocross
    ```
 
 2. **Install frontend dependencies:**

@@ -34,12 +34,17 @@ Frontend__Url=https://your-frontend-url.vercel.app
 ### 1. Create GitHub Repository
 
 ```bash
-cd /path/to/motocross-tracking
-git init
-git add .
-git commit -m "Initial commit: Motorsports tracking platform MVP"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/motocross-tracking.git
+cd /Users/claudiovilas/Downloads/Proyectos/Motocross
+
+# Already done - repository initialized and committed!
+# Now push to GitHub:
+
+# Option A: Using HTTPS (requires Personal Access Token)
+git remote set-url origin https://github.com/ClaudioVilas/motocross.git
+git push -u origin main
+
+# Option B: Using SSH (recommended)
+git remote set-url origin git@github.com:ClaudioVilas/motocross.git
 git push -u origin main
 ```
 
